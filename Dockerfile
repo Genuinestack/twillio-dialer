@@ -11,7 +11,8 @@ RUN apk add --no-cache \
 WORKDIR /app
 
 # Copy Gemfile and install dependencies
-COPY Gemfile Gemfile.lock ./
+# Note: Gemfile.lock will be generated during bundle install if it doesn't exist
+COPY Gemfile ./
 RUN bundle config set --local deployment 'true' && \
     bundle config set --local without 'development test' && \
     bundle install --jobs=4 --retry=3
