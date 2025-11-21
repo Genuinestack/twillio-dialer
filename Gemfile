@@ -2,7 +2,8 @@
 source 'https://rubygems.org'
 
 # Specify the Ruby version to match Render's environment
-ruby '3.3.0'
+# Using ~> allows any 3.3.x version (3.3.0, 3.3.10, etc.)
+ruby '~> 3.3.0'
 
 # --- Core Application Gems (Updated for Compatibility) ---
 gem 'sinatra', '~> 3.0'
