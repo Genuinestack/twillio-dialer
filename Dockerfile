@@ -13,8 +13,7 @@ WORKDIR /app
 # Copy Gemfile and install dependencies
 # Note: Gemfile.lock will be generated during bundle install if it doesn't exist
 COPY Gemfile ./
-RUN bundle config set --local deployment 'true' && \
-    bundle config set --local without 'development test' && \
+RUN bundle config set --local without 'development test' && \
     bundle install --jobs=4 --retry=3
 
 # Copy application code
